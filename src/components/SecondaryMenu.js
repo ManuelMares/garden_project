@@ -2,17 +2,17 @@ import React, {Component} from 'react';
 import {Button} from './Button'
 
 const menuOption = [
-    'About Us',
-    'Get Started',
-    'AFQ',
-    'Log In'
+    ['About Us', "about"],
+    ['Get Started', "about"],
+    ['AFQ', "/"],
+    ['Log In', "contact"],
 ]
 
 export class SecondaryMenu extends Component{
     render(){
         const buttons = [] 
         for (let i = 0; i< menuOption.length; i++){
-            buttons.push(<Button message={menuOption[i]} key={i}/>)
+            buttons.push(<Button message={menuOption[i][0]} route={menuOption[i][1]} key={i}/>)
         }
 
         return(          
